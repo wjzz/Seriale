@@ -7,11 +7,13 @@
 #  nazwa      :string(255)
 #  e_mail     :string(255)
 #  hash_hasla :string(255)
-#  rola       :string(255)
+#  rola       :string(1)       default("s")
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 class Uzytkownik < ActiveRecord::Base
-  #  attr_accesible :nazwa, :e_mail
+  #  attr_accesible :nazwa, :email
+
+  validates_presence_of :nazwa, :email
 end

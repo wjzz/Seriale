@@ -13,7 +13,7 @@ ActiveRecord::Schema.define(:version => 20100613143933) do
 
   create_table "uzytkowniks", :force => true do |t|
     t.string   "nazwa"
-    t.string   "e_mail"
+    t.string   "email"
     t.string   "hash_hasla"
     t.string   "rola",       :limit => 1, :default => "s"
     t.datetime "created_at"
