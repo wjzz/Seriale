@@ -1,15 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Hello! <%= controller.action_name %></title>
-    <%# stylesheet_link_tag 'scaffold' %>
+    <%= stylesheet_link_tag 'main' %>
   </head>
   <body>
     <p style="color: green"><%= flash[:notice] %></p>
 
-    <%= yield %>
+    <div id="banner">
+      <h1><i>S e r i a l e</i></h1>
+    </div>
+
+    <div id="header">
+      <%= link_to 'Strona główna', root_path %>
+      <%= link_to 'Pomoc', help_path %>
+      <%= link_to 'Zaloguj się', signin_path %>
+      <%= link_to 'Załóż konto', signup_path %>
+    </div>
+
+    <div id="main_contents" class="round">    
+      <div id="seriale_menu">
+        <%= link_to 'Seriale', '#' %> <br />
+        <%= link_to 'Aktorzy', '#' %> <br />
+      </div>
+ 
+     <div id="profil_menu">
+        Zobacz profil <br />
+	<%= link_to 'Lista użytkowników', users_path %>
+      </div>
+   
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+
   </body>
 </html>
