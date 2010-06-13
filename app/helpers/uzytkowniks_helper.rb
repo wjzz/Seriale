@@ -10,4 +10,14 @@ module UzytkowniksHelper
       'Jestes moderatorem.'
     end
   end
+
+  def status(user)
+    if user.rola == 'a'
+      'administrator'
+    elsif user.rola == 'm'
+      'moderator'
+    else
+      'standardowy'
+    end
+  end
 end

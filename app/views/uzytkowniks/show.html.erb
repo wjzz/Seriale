@@ -1,10 +1,7 @@
-<h1><%= h @user.nazwa %>, witaj w profilu!</h1>
-
-<h2> Twoje id to <%= @user.id %></h2>
+<h1>Profil użytkownika <i><%= h @user.nazwa %></i></h1>
 
 <p>
   Email: <%= h @user.email %><br />
-  Haslo: <%= h @user.hash_hasla %>
 </p>
 
 <%= print_status(@user) %>

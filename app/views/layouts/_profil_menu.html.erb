@@ -1,0 +1,17 @@
+<div id="profil_menu">
+  <% if current_user.nil? %>
+    <%= link_to 'Zaloguj się', signin_path %><br /><br />
+    <%= link_to 'Załóż nowe konto', signup_path %>
+  <% else %>
+    <%= link_to 'Wyloguj się', signoff_path %>
+
+    <hr />
+
+    <%= link_to 'Twój profil', current_user %> <br /><br/>
+    
+    <% if current_user.admin? %>
+      <%= link_to 'Lista użytkowników', users_path %>
+    <% end %>
+  <% end %>
+
+</div>

@@ -27,14 +27,26 @@ class Uzytkownik < ActiveRecord::Base
 
   validates_confirmation_of :password
 
-  validates_presence_of :password
-  validates_length_of   :password, :within => 6..40
+  #validates_presence_of :password
+  #validates_length_of   :password, :within => 6..40
 
   before_save :encrypt_password
 
 
   def has_password?(submitted_password)
     hash_hasla == encrypt(submitted_password)
+  end
+
+  def admin?
+    rola == 'a'
+  end
+
+  def moderator?
+    rola == 'm'
+  end
+
+  def standard?
+    rola == 's'
   end
 
   def Uzytkownik.authenticate(nazwa, submitted_password)

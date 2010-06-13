@@ -1,1 +1,15 @@
-<%= render :partial => "form" %>
+<h2>Zmiana roli użytkownika</h2>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label 'Rola' %><br />
+    <%= f.select(:rola, options_for_select(@status_options)) %>	
+  </p>
+
+  <p>
+    <%= f.submit 'Zapisz zmiany' %>
+  </p>
+
+<% end %>
