@@ -12,8 +12,10 @@
 #  updated_at :datetime
 #
 
+require 'digest'
 class Uzytkownik < ActiveRecord::Base
-  #  attr_accesible :nazwa, :email
+  attr_accessor :password
+#  attr_accessible :nazwa, :email, :rola, :password, :password_confirmation
 
   validates_presence_of :nazwa, :email
 
@@ -22,4 +24,35 @@ class Uzytkownik < ActiveRecord::Base
 
   validates_uniqueness_of :nazwa, :case_sensitive => false
   validates_uniqueness_of :email, :case_sensitive => false
+
+  validates_confirmation_of :password
+
+  validates_presence_of :password
+  validates_length_of   :password, :within => 6..40
+
+  before_save :encrypt_password
+
+
+  def has_password?(submitted_password)
+    hash_hasla == encrypt(submitted_password)
+  end
+
+  def Uzytkownik.authenticate(nazwa, submitted_password)
+    user = Uzytkownik.find_by_nazwa(nazwa)
+    return nil  if user.nil?
+    return user if user.has_password?(submitted_password)
+  end
+
+  private
+    def encrypt_password
+      self.hash_hasla = encrypt(password)
+    end
+
+    def encrypt(string)
+      secure_hash(string)
+    end
+
+    def secure_hash(string)
+      Digest::SHA2.hexdigest(string)
+    end
 end
