@@ -1,0 +1,8 @@
+<% @users.each do |user| %>
+   <%= h user.id %>
+   <%= h user.nazwa %>
+   <%= h user.email %>
+   <%= h user.hash_hasla %>
+   <%= h user.rola %>
+   <br />
+<% end %>

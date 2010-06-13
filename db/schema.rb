@@ -20,4 +20,7 @@ ActiveRecord::Schema.define(:version => 20100613143933) do
     t.datetime "updated_at"
   end
 
+  add_index "uzytkowniks", ["email"], :name => "index_uzytkowniks_on_email", :unique => true
+  add_index "uzytkowniks", ["nazwa"], :name => "index_uzytkowniks_on_nazwa", :unique => true
+
 end

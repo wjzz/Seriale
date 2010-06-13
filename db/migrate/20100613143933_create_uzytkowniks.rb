@@ -8,6 +8,9 @@ class CreateUzytkowniks < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :uzytkowniks, :nazwa, :unique => true
+    add_index :uzytkowniks, :email, :unique => true
   end
 
   def self.down
