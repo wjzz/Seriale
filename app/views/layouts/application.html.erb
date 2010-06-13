@@ -16,8 +16,14 @@
     <div id="header">
       <%= link_to 'Strona główna', root_path %>
       <%= link_to 'Pomoc', help_path %>
-      <%= link_to 'Zaloguj się', signin_path %>
-      <%= link_to 'Załóż konto', signup_path %>
+      <% if current_user.nil? %>
+        <%= link_to 'Zaloguj się', signin_path %>
+        <%= link_to 'Załóż konto', signup_path %>
+      <% else %>
+        <%= link_to 'Wyloguj się', signoff_path %>
+      <% end %>
+
+
     </div>
 
     <div id="main_contents" class="round">    
@@ -27,11 +33,17 @@
       </div>
  
      <div id="profil_menu">
-        Zobacz profil <br />
-	<%= link_to 'Lista użytkowników', users_path %>
+	<%= link_to 'Lista użytkowników', users_path %><br /><br />
+	<% unless current_user.nil? %>
+	  <%= link_to 'Twój profil', current_user %>
+	<% end %>
       </div>
    
       <div id="content">
+        <% flash.each do |key, value| %>
+          <div class="flash_<%= key %>"><%= value %></div>
+        <% end %> 
+
         <%= yield %>
       </div>
     </div>

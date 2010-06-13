@@ -1,0 +1,21 @@
+<h2>Logowanie</h2>
+
+<% form_for(:login, :url => logins_path) do |f| %>
+
+<p>
+  <%= f.label :nazwa %><br />
+  <%= f.text_field :nazwa %>
+</p>
+<p>
+  <%= f.label 'Hasło' %><br />
+  <%= f.password_field :password %>
+</p>
+<p>
+  <%= f.submit "Zaloguj" %>
+</p>
+
+<% end %>
+
+<p>
+  Nie masz jeszcze konta? <%= link_to "Zarejestruj się!", signup_path %>
+</p>

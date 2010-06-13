@@ -39,13 +39,16 @@ class Uzytkownik < ActiveRecord::Base
 
   def Uzytkownik.authenticate(nazwa, submitted_password)
     user = Uzytkownik.find_by_nazwa(nazwa)
+
     return nil  if user.nil?
     return user if user.has_password?(submitted_password)
   end
 
   private
     def encrypt_password
-      self.hash_hasla = encrypt(password)
+      unless password.nil?
+        self.hash_hasla = encrypt(password)
+      end
     end
 
     def encrypt(string)
