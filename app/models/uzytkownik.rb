@@ -13,4 +13,5 @@
 #
 
 class Uzytkownik < ActiveRecord::Base
+  #  attr_accesible :nazwa, :e_mail
 end

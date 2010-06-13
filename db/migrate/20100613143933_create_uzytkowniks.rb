@@ -4,7 +4,7 @@ class CreateUzytkowniks < ActiveRecord::Migration
       t.string :nazwa
       t.string :e_mail
       t.string :hash_hasla
-      t.string :rola
+      t.string :rola, :limit => 1, :default => 's'
 
       t.timestamps
     end

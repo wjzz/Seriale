@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20100613143933) do
     t.string   "nazwa"
     t.string   "e_mail"
     t.string   "hash_hasla"
-    t.string   "rola"
+    t.string   "rola",       :limit => 1, :default => "s"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
