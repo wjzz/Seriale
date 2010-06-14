@@ -3,23 +3,12 @@
 
   <p>
     <%= f.label :serial %><br />
-
-    <% if @rola.serial_id %>
-      <%= f.select(:serial_id, options_for_select(@seriale_options, @rola.serial_id)) %>
-    <% else %>
-      <%= f.select(:serial_id, options_for_select(@seriale_options)) %>
-    <% end %>
+    <%= f.select(:serial_id, options_for_select(@seriale_options, @rola.serial_id)) %>
   </p>
 
   <p>
     <%= f.label :aktor %><br />
-
-    <% if @rola.aktor_id %>
-        <%= f.select(:aktor_id, options_for_select(@aktorzy_options, @rola.aktor_id)) %>
-    <% else %>
-        <%= f.select(:aktor_id, options_for_select(@aktorzy_options)) %>
-    <% end %>
-
+    <%= f.select(:aktor_id, options_for_select(@aktorzy_options, @rola.aktor_id)) %>
   </p>
 
   <p>

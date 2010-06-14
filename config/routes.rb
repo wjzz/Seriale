@@ -6,11 +6,12 @@ ActionController::Routing::Routes.draw do |map|
   map.users   '/uzytkownicy', :controller => 'uzytkowniks', :action => 'index'
   map.signup  '/zaloz_konto', :controller => 'uzytkowniks', :action => 'new'
   map.signin  '/zaloguj',     :controller => 'logins',      :action => 'new'
-  map.signoff '/wyloguj',     :controller => 'logins',      :action => 'destroy'
+  map.signout '/wyloguj',     :controller => 'logins',      :action => 'destroy'
 
-  map.manage_serials '/serials/manage', :controller => 'serials', :action => 'manage'
-  map.manage_aktors  '/aktors/manage',  :controller => 'aktors',  :action => 'manage
-'
+  map.manage_serials     '/serials/manage',     :controller => 'serials',     :action => 'manage'
+  map.manage_aktors      '/aktors/manage',      :controller => 'aktors',      :action => 'manage'
+  map.manage_uzytkowniks '/uzytkowniks/manage', :controller => 'uzytkowniks', :action => 'manage'
+
   map.resources :uzytkowniks
   map.resources :aktors
   map.resources :serials

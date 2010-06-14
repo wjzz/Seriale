@@ -12,16 +12,31 @@
 
 <h3>Role w serialach</h3>
 
-<% @aktor.serials.each do |serial| %>
-  <ul>
-    <li><%= link_to serial.nazwa, serial %></li>
-  </ul>
+<ul>
+<% @aktor.rolas.each do |rola| %>
+  <% serial = Serial.find(rola.serial_id) %>
+  <li>
+    <%= link_to "<b>#{serial.nazwa}</b>", serial %>
+    <%= " (jako #{rola.imie_postaci} #{rola.nazwisko_postaci})" %>
+
+    <% if can_edit? :aktors %>
+        <span class="edition">
+          <%= link_to "[Usuń rolę]", rola, :confirm => 'Czy na pewno?', :method => :delete %>
+        </span>
+     <% end %>
+  </li>
+
 <% end %>
+</ul>
+
 
 <% if can_edit? :serials %>
+ <div class="edition">
   <hr />
   <%= link_to "Edycja danych aktor#{ @aktor.nil? || @aktor.plec=='k' ? 'ki' : 'a'}", 
                edit_aktor_path(@aktor) %> <br /><br />
-  Dodaj do serialu
 
+  <%= link_to "Dodaj <b>#{@aktor.imie} #{@aktor.nazwisko}</b> do serialu", 
+              :controller => :rolas, :action => :new_with_aktor, :id => @aktor.id %> 
+ </div>
 <% end %>

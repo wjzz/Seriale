@@ -17,8 +17,26 @@
 
 <h3>Aktorzy występujący w serialu</h3>
 
-<% @serial.aktors.each do |aktor| %>
-  <ul>
-    <li><%= link_to "#{aktor.imie} #{aktor.nazwisko}", aktor %></li>
-  </ul>
+<ul>
+<% @serial.rolas.each do |rola| %>
+   <% aktor = Aktor.find(rola.aktor_id) %>  
+   <li>
+     <%= link_to "<b>#{aktor.imie} #{aktor.nazwisko}</b>", aktor %>
+       <%= " jako #{rola.imie_postaci} #{rola.nazwisko_postaci}" %>
+     <% if can_edit? :serials %>
+        <span class="edition">
+          <%= link_to "[Usuń rolę]", rola, :confirm => 'Czy na pewno?', :method => :delete %>
+        </span>
+     <% end %>
+  </li>
+<% end %>
+</ul>
+
+<% if can_edit? :serials %>
+<div class="edition">
+<hr />
+<%= link_to 'Edytuj serial', edit_serial_path(@serial) %><br /><br />
+<%= link_to "Dodaj aktora do <b>#{@serial.nazwa}</b>", 
+            :controller => :rolas, :action => :new_with_serial, :id => @serial.id %>
+</div>
 <% end %>

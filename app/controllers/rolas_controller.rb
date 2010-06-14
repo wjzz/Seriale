@@ -34,6 +34,11 @@ class RolasController < ApplicationController
   end
 
   def destroy
+    @rola = Rola.find(params[:id])
+
+    @rola.destroy
+
+    redirect_to(Serial.find(@rola.serial_id))
   end
 
   private

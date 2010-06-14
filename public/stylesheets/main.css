@@ -26,12 +26,12 @@ body {
 
 #seriale_menu {
   float: left;
-  width: 90px;
+  width: 120px;
 }
 
 #content {
-  width: 680px;
-  margin-left: 90px;
+  width: 650px;
+  margin-left: 120px;
   background: #fff;
   padding: 10px;
 }
@@ -55,6 +55,7 @@ a:hover {
 a:visited {
   color: #069;
 }
+
 
 .fieldWithErrors {
   padding: 2px;
@@ -94,4 +95,8 @@ a:visited {
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+.edition {
+  font-size: 11px;
 }

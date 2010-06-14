@@ -10,17 +10,19 @@
 
 <% @serials.each do |serial| %>
   <tr>
-    <td><%=h serial.nazwa %></td>
+    <td><%= link_to (h serial.nazwa), serial %></td>
     <td><%=h serial.opis %></td>
     <td><%=h serial.kategoria %></td>
     <td><%=h serial.kanaltv %></td>
-    <td><%= link_to 'Pokaż', serial %></td>
-    <td><%= link_to 'Edytuj', edit_serial_path(serial) %></td>
-    <td><%= link_to 'Usuń', serial, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <td class="edition"><%= link_to 'Edytuj', edit_serial_path(serial) %></td>
+    <td class="edition"><%= link_to 'Usuń', serial, :confirm => 'Czy na pewno?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Dodaj nowy serial', new_serial_path %>
+<span class="edition">
+  <%= link_to 'Dodaj nowy serial', new_serial_path %>
+</span>

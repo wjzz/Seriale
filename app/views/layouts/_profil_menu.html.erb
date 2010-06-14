@@ -3,14 +3,16 @@
     <%= link_to 'Zaloguj się', signin_path %><br /><br />
     <%= link_to 'Załóż nowe konto', signup_path %>
   <% else %>
-    <%= link_to 'Wyloguj się', signoff_path %>
+    <%= link_to 'Wyloguj się', signout_path %>
 
     <hr />
 
     <%= link_to 'Twój profil', current_user %> <br /><br/>
     
     <% if current_user.admin? %>
-      <%= link_to 'Lista użytkowników', users_path %>
+      <div class="edition">
+        <%= link_to 'Lista użytkowników', users_path %>
+      </div>
     <% end %>
   <% end %>
 

@@ -11,7 +11,7 @@
   </p>
   <p>
     <%= f.label :plec %><br />
-    <%= f.select(:plec, options_for_select(@gender_options)) %>
+    <%= f.select(:plec, options_for_select(@gender_options, @aktor.plec)) %>
   </p>
   <p>
     <%= f.label :data_urodzenia %><br />

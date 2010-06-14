@@ -12,7 +12,14 @@
     <td><%= link_to ("#{h aktor.imie} #{h aktor.nazwisko}"), aktor %></td>
     <td><%= show_gender(aktor) %></td>
     <td><%= h aktor.data_urodzenia %></td>
+    <td class="edition"><%= link_to 'Edytuj', edit_aktor_path(aktor) %></td>
+    <td class="edition"><%= link_to 'Usuń', aktor, :confirm => 'Czy na pewno?', :method => :delete %></td>
   </tr>
 <% end %>
-
 </table>
+
+<br />
+
+<span class="edition">
+  <%= link_to 'Dodaj nowego aktora/aktorkę', new_aktor_path %>
+</span>

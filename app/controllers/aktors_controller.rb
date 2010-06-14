@@ -6,11 +6,16 @@ class AktorsController < ApplicationController
   before_filter :find_aktor,
     :only => [:show, :edit, :update, :destroy]
 
+  before_filter :find_all_aktors,
+    :only => [:index, :manage]
+
   def index
-    @aktors = Aktor.all
   end
 
   def show
+  end
+
+  def manage
   end
 
   def new
@@ -51,5 +56,9 @@ class AktorsController < ApplicationController
 
   def find_aktor
     @aktor = Aktor.find(params[:id])
+  end
+
+  def find_all_aktors
+    @aktors = Aktor.all
   end
 end

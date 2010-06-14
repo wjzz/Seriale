@@ -1,4 +1,20 @@
 <div id="seriale_menu">
-  <%= link_to 'Seriale', serials_path %> <br /><br />
+  <%= link_to 'Seriale', serials_path %> <br /
+
+  <% if can_edit? :serials %>
+    <div class="edition">
+      <%= link_to 'Edycja seriali', manage_serials_path %><br />
+    </div>
+  <% end %>
+
+  <br />
   <%= link_to 'Aktorzy', aktors_path  %> <br />
+
+  <% if can_edit? :aktors %>
+    <div class="edition">
+      <%= link_to 'Edycja aktorów', manage_aktors_path %><br />
+    </div>
+  <% end %>
+  
+
 </div>
