@@ -6,11 +6,16 @@ class UzytkowniksController < ApplicationController
   before_filter :generate_status_options,
     :only => [:edit, :update]
 
+  before_filter :find_all_users,
+    :only => [:index, :manage]
+
   def index
-    @users = Uzytkownik.all
   end
 
   def show
+  end
+
+  def manage
   end
 
   def new
@@ -56,5 +61,9 @@ class UzytkowniksController < ApplicationController
 
   def generate_status_options
     @status_options = [['administrator','a'],['moderator','m'],['standardowy','s']]
+  end
+
+  def find_all_users
+    @users = Uzytkownik.all
   end
 end

@@ -3,6 +3,7 @@
     <th>Nazwa użytkownika</th>
     <th>E-mail</th>
     <th>Rola użytkownika</th>
+    <th>Operacje</th>
   </tr>
 
   <% @users.each do |user| %>
@@ -10,6 +11,8 @@
       <td><%= h user.nazwa %></td>
       <td><%= h user.email %></td>
       <td><%= status(user) %></td>
+      <td class="edition"><%= link_to 'Zmień uprawnienia', edit_uzytkownik_path(user) %></td>
+      <td class="edition"><%= link_to 'Usuń użytkownika', user, :confirm => 'Czy na pewno usunąć użytkonika?', :method => :delete %></td>
     </tr>
   <% end %>
 
