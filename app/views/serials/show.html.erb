@@ -15,5 +15,10 @@
   <%=h @serial.opis %>
 </p>
 
-<%= link_to 'Edit', edit_serial_path(@serial) %> |
-<%= link_to 'Back', serials_path %>
+<h3>Aktorzy występujący w serialu</h3>
+
+<% @serial.aktors.each do |aktor| %>
+  <ul>
+    <li><%= link_to "#{aktor.imie} #{aktor.nazwisko}", aktor %></li>
+  </ul>
+<% end %>

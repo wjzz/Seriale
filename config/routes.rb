@@ -1,7 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :aktors
-
-  map.resources :serials
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -11,7 +8,12 @@ ActionController::Routing::Routes.draw do |map|
   map.signin  '/zaloguj',     :controller => 'logins',      :action => 'new'
   map.signoff '/wyloguj',     :controller => 'logins',      :action => 'destroy'
 
+  map.manage_serials '/serials/manage', :controller => 'serials', :action => 'manage'
+  map.manage_aktors  '/aktors/manage',  :controller => 'aktors',  :action => 'manage
+'
   map.resources :uzytkowniks
+  map.resources :aktors
+  map.resources :serials
   map.resources :logins, :only => [:new, :create, :destroy]
 
   map.root :controller => 'pages', :action => 'home'

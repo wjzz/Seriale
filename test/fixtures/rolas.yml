@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20100614172646
+#
+# Table name: rolas
+#
+#  id               :integer         not null, primary key
+#  serial_id        :integer
+#  aktor_id         :integer
+#  imie_postaci     :string(255)
+#  nazwisko_postaci :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:

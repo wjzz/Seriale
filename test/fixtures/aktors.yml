@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100614162558
+# Schema version: 20100614172646
 #
 # Table name: aktors
 #

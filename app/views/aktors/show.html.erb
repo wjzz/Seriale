@@ -1,4 +1,4 @@
-<h2><%= h @aktor.imie %> <%= h @aktor.nazwisko %></h2>
+<h1><%= h @aktor.imie %> <%= h @aktor.nazwisko %></h1>
 
 <p>
   <b>Płeć:</b>
@@ -10,6 +10,18 @@
   <%=h @aktor.data_urodzenia %>
 </p>
 
+<h3>Role w serialach</h3>
 
-<%= link_to 'Edit', edit_aktor_path(@aktor) %> |
-<%= link_to 'Back', aktors_path %>
+<% @aktor.serials.each do |serial| %>
+  <ul>
+    <li><%= link_to serial.nazwa, serial %></li>
+  </ul>
+<% end %>
+
+<% if can_edit? :serials %>
+  <hr />
+  <%= link_to "Edycja danych aktor#{ @aktor.nil? || @aktor.plec=='k' ? 'ki' : 'a'}", 
+               edit_aktor_path(@aktor) %> <br /><br />
+  Dodaj do serialu
+
+<% end %>

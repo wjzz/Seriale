@@ -2,11 +2,16 @@ class SerialsController < ApplicationController
   before_filter :find_serial,
     :only => [:show, :edit, :update, :destroy]
 
+  before_filter :find_all_serials,
+    :only => [:index, :manage]
+
   def index
-    @serials = Serial.all
   end
 
   def show
+  end
+
+  def manage
   end
 
   def new
@@ -43,5 +48,9 @@ class SerialsController < ApplicationController
   private
     def find_serial
       @serial = Serial.find(params[:id])
+    end
+
+    def find_all_serials
+      @serials = Serial.all
     end
 end
