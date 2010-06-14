@@ -1,0 +1,26 @@
+<h1>Listing serials</h1>
+
+<table>
+  <tr>
+    <th>Nazwa</th>
+    <th>Opis</th>
+    <th>Kategoria</th>
+    <th>Kanaltv</th>
+  </tr>
+
+<% @serials.each do |serial| %>
+  <tr>
+    <td><%=h serial.nazwa %></td>
+    <td><%=h serial.opis %></td>
+    <td><%=h serial.kategoria %></td>
+    <td><%=h serial.kanaltv %></td>
+    <td><%= link_to 'Show', serial %></td>
+    <td><%= link_to 'Edit', edit_serial_path(serial) %></td>
+    <td><%= link_to 'Destroy', serial, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New serial', new_serial_path %>

@@ -1,13 +1,13 @@
 # == Schema Information
 # Schema version: 20100614160530
 #
-# Table name: uzytkowniks
+# Table name: serials
 #
 #  id         :integer         not null, primary key
 #  nazwa      :string(255)
-#  email      :string(255)
-#  hash_hasla :string(255)
-#  rola       :string(1)       default("s")
+#  opis       :text
+#  kategoria  :string(255)
+#  kanaltv    :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -16,12 +16,12 @@
 
 one:
   nazwa: MyString
-  e-mail: MyString
-  hash_hasla: MyString
-  rola: MyString
+  opis: MyText
+  kategoria: MyString
+  kanaltv: MyString
 
 two:
   nazwa: MyString
-  e-mail: MyString
-  hash_hasla: MyString
-  rola: MyString
+  opis: MyText
+  kategoria: MyString
+  kanaltv: MyString

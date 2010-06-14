@@ -1,0 +1,23 @@
+<p>
+  <b>Nazwa:</b>
+  <%=h @serial.nazwa %>
+</p>
+
+<p>
+  <b>Opis:</b>
+  <%=h @serial.opis %>
+</p>
+
+<p>
+  <b>Kategoria:</b>
+  <%=h @serial.kategoria %>
+</p>
+
+<p>
+  <b>Kanaltv:</b>
+  <%=h @serial.kanaltv %>
+</p>
+
+
+<%= link_to 'Edit', edit_serial_path(@serial) %> |
+<%= link_to 'Back', serials_path %>

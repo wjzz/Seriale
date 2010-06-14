@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100613143933) do
+ActiveRecord::Schema.define(:version => 20100614160530) do
+
+  create_table "serials", :force => true do |t|
+    t.string   "nazwa"
+    t.text     "opis"
+    t.string   "kategoria"
+    t.string   "kanaltv"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "serials", ["nazwa"], :name => "index_serials_on_nazwa", :unique => true
 
   create_table "uzytkowniks", :force => true do |t|
     t.string   "nazwa"
