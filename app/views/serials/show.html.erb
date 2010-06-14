@@ -1,12 +1,4 @@
-<p>
-  <b>Nazwa:</b>
-  <%=h @serial.nazwa %>
-</p>
-
-<p>
-  <b>Opis:</b>
-  <%=h @serial.opis %>
-</p>
+<h1><%=h @serial.nazwa %></h1>
 
 <p>
   <b>Kategoria:</b>
@@ -18,6 +10,10 @@
   <%=h @serial.kanaltv %>
 </p>
 
+<p>
+  <b>Opis:</b>
+  <%=h @serial.opis %>
+</p>
 
 <%= link_to 'Edit', edit_serial_path(@serial) %> |
 <%= link_to 'Back', serials_path %>

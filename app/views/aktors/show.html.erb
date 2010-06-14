@@ -1,0 +1,15 @@
+<h2><%= h @aktor.imie %> <%= h @aktor.nazwisko %></h2>
+
+<p>
+  <b>Płeć:</b>
+  <%= show_gender(@aktor) %>
+</p>
+
+<p>
+  <b>Data urodzenia:</b>
+  <%=h @aktor.data_urodzenia %>
+</p>
+
+
+<%= link_to 'Edit', edit_aktor_path(@aktor) %> |
+<%= link_to 'Back', aktors_path %>

@@ -1,28 +1,6 @@
-<h1>Editing serial</h1>
+<h1>Edycja serialu</h1>
 
-<% form_for(@serial) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :nazwa %><br />
-    <%= f.text_field :nazwa %>
-  </p>
-  <p>
-    <%= f.label :opis %><br />
-    <%= f.text_area :opis %>
-  </p>
-  <p>
-    <%= f.label :kategoria %><br />
-    <%= f.text_field :kategoria %>
-  </p>
-  <p>
-    <%= f.label :kanaltv %><br />
-    <%= f.text_field :kanaltv %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<%= render :partial => "form" %>
 
 <%= link_to 'Show', @serial %> |
 <%= link_to 'Back', serials_path %>

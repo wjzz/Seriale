@@ -1,0 +1,26 @@
+<h1>Listing aktors</h1>
+
+<table>
+  <tr>
+    <th>Imie</th>
+    <th>Nazwisko</th>
+    <th>Plec</th>
+    <th>Data urodzenia</th>
+  </tr>
+
+<% @aktors.each do |aktor| %>
+  <tr>
+    <td><%=h aktor.imie %></td>
+    <td><%=h aktor.nazwisko %></td>
+    <td><%=h aktor.plec %></td>
+    <td><%=h aktor.data_urodzenia %></td>
+    <td><%= link_to 'Show', aktor %></td>
+    <td><%= link_to 'Edit', edit_aktor_path(aktor) %></td>
+    <td><%= link_to 'Destroy', aktor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New aktor', new_aktor_path %>

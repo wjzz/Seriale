@@ -1,0 +1,23 @@
+<% form_for(@aktor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :imie %><br />
+    <%= f.text_field :imie %>
+  </p>
+  <p>
+    <%= f.label :nazwisko %><br />
+    <%= f.text_field :nazwisko %>
+  </p>
+  <p>
+    <%= f.label :plec %><br />
+    <%= f.select(:plec, options_for_select(@gender_options)) %>
+  </p>
+  <p>
+    <%= f.label :data_urodzenia %><br />
+    <%= f.date_select :data_urodzenia, :start_year => 1900, :end_year => Time.now.year, :use_month_numbers => true %>
+  </p>
+  <p>
+    <%= f.submit 'Zapisz' %>
+  </p>
+<% end %>
