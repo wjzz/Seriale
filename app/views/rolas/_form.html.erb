@@ -1,0 +1,38 @@
+<% form_for(@rola) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :serial %><br />
+
+    <% if @rola.serial_id %>
+      <%= f.select(:serial_id, options_for_select(@seriale_options, @rola.serial_id)) %>
+    <% else %>
+      <%= f.select(:serial_id, options_for_select(@seriale_options)) %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.label :aktor %><br />
+
+    <% if @rola.aktor_id %>
+        <%= f.select(:aktor_id, options_for_select(@aktorzy_options, @rola.aktor_id)) %>
+    <% else %>
+        <%= f.select(:aktor_id, options_for_select(@aktorzy_options)) %>
+    <% end %>
+
+  </p>
+
+  <p>
+    <%= f.label :imie_postaci %><br />
+    <%= f.text_field :imie_postaci %>
+  </p>
+
+  <p>
+    <%= f.label :nazwisko_postaci %><br />
+    <%= f.text_field :nazwisko_postaci %>
+  </p>
+
+  <p>
+    <%= f.submit "Zapisz" %>
+  </p>
+<% end %>
