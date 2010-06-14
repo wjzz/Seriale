@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100614162558) do
+ActiveRecord::Schema.define(:version => 20100614172646) do
 
   create_table "aktors", :force => true do |t|
     t.string   "imie"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(:version => 20100614162558) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "rolas", :force => true do |t|
+    t.integer  "serial_id"
+    t.integer  "aktor_id"
+    t.string   "imie_postaci"
+    t.string   "nazwisko_postaci"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rolas", ["aktor_id"], :name => "index_rolas_on_aktor_id"
+  add_index "rolas", ["serial_id"], :name => "index_rolas_on_serial_id"
 
   create_table "serials", :force => true do |t|
     t.string   "nazwa"

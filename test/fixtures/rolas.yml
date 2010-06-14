@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  serial_id: 1
+  aktor_id: 1
+  imie_postaci: MyString
+  nazwisko_postaci: MyString
+
+two:
+  serial_id: 1
+  aktor_id: 1
+  imie_postaci: MyString
+  nazwisko_postaci: MyString

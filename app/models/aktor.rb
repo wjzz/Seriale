@@ -13,4 +13,6 @@
 #
 
 class Aktor < ActiveRecord::Base
+  has_many :rolas
+  has_many :serials, :through => :rolas #, :uniq => true
 end

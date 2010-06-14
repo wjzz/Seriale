@@ -16,4 +16,7 @@ class Serial < ActiveRecord::Base
   validates_presence_of   :nazwa
   validates_length_of     :nazwa, :maximum => 255
   validates_uniqueness_of :nazwa, :case_sensitive => false
+
+  has_many :rolas
+  has_many :aktors, :through => :rolas
 end
