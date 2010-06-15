@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  serial_id: 1
+  uzytkownik_id: 1
+  wartosc: 1
+
+two:
+  serial_id: 1
+  uzytkownik_id: 1
+  wartosc: 1

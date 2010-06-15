@@ -19,4 +19,7 @@ class Serial < ActiveRecord::Base
 
   has_many :rolas
   has_many :aktors, :through => :rolas
+
+  has_many :ocenas
+  has_many :uzytkowniks, :through => :ocenas
 end

@@ -9,13 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100614172646) do
+ActiveRecord::Schema.define(:version => 20100615142437) do
 
   create_table "aktors", :force => true do |t|
     t.string   "imie"
     t.string   "nazwisko"
     t.string   "plec",           :limit => 1
     t.date     "data_urodzenia"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ocenas", :force => true do |t|
+    t.integer  "serial_id"
+    t.integer  "uzytkownik_id"
+    t.integer  "wartosc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -32,6 +32,9 @@ class Uzytkownik < ActiveRecord::Base
 
   before_save :encrypt_password
 
+  has_many :ocenas
+  has_many :serials, :through => :ocenas
+
 
   def has_password?(submitted_password)
     hash_hasla == encrypt(submitted_password)

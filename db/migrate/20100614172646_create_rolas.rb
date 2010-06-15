@@ -1,4 +1,4 @@
-class CreateRolas < ActiveRecord::Migration
+arclass CreateRolas < ActiveRecord::Migration
   def self.up
     create_table :rolas do |t|
       t.integer  :serial_id
