@@ -9,7 +9,8 @@
 
     <%= link_to 'Twój profil', current_user %> <br /><br/>
     <%= link_to 'Twoje oceny', :controller => 'ocenas', :action => 'index', :id => current_user.id %><br /><br />
-    
+    <%= link_to 'Twoje listy', 
+                :controller => 'listas', :action => 'show_for_user', :id => current_user.id %><br /><br />    
     <% if current_user.admin? %>
       <div class="edition">
         <%= link_to 'Zarządzanie użytkownikami', manage_uzytkowniks_path %>

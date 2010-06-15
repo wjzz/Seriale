@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100615184953
+# Schema version: 20100615195417
 #
 # Table name: uzytkowniks
 #
@@ -34,7 +34,7 @@ class Uzytkownik < ActiveRecord::Base
 
   has_many :ocenas
   has_many :serials, :through => :ocenas
-
+  has_many :listas
 
   def has_password?(submitted_password)
     hash_hasla == encrypt(submitted_password)

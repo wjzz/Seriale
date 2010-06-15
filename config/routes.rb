@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-
   # The priority is based upon order of creation: first created -> highest priority.
 
   map.help    '/pomoc',       :controller => 'pages',       :action => 'help'
@@ -18,7 +17,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :logins,   :only => [:new, :create, :destroy]
   map.resources :rolas,    :only => [:new, :create, :destroy]
   map.resources :ocenas,   :only => [:create, :update, :destroy]
-  map.resources :odcineks, :only => [:show, :create, :edit, :update, :destroy, :destroy]
+  map.resources :odcineks, :only => [:show, :create, :edit, :update, :destroy]
+  map.resources :listas,   :only => [:index, :show, :create, :edit, :update, :destroy]
 
   map.root :controller => 'pages', :action => 'home'
 

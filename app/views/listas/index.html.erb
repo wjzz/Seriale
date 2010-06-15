@@ -1,0 +1,24 @@
+<h1>Listing listas</h1>
+
+<table>
+  <tr>
+    <th>Nazwa</th>
+    <th>Dostep</th>
+    <th>Uzytkownik</th>
+  </tr>
+
+<% @listas.each do |lista| %>
+  <tr>
+    <td><%=h lista.nazwa %></td>
+    <td><%=h lista.dostep %></td>
+    <td><%=h lista.uzytkownik_id %></td>
+    <td><%= link_to 'Show', lista %></td>
+    <td><%= link_to 'Edit', edit_lista_path(lista) %></td>
+    <td><%= link_to 'Destroy', lista, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%# link_to 'New lista', new_lista_path %>

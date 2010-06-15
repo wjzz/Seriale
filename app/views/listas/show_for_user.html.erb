@@ -1,0 +1,18 @@
+<h3>Edycja list użytkownika <b><%= @user.nazwa %></b></h3>
+
+<table>
+  <tr>
+    <th>Nazwa</th><th>Operacje</th>
+  </tr>
+
+<% @user.listas.each do |lista| %>
+
+<tr>
+  <td><%= link_to lista.nazwa, lista %></td>
+  <td class="edition">Edytuj</td>
+  <td class="edition">Usuń</td>
+</tr>
+
+<% end %>
+
+<%= link_to 'Utwórz nową listę', :action => :new, :id => @user.id %>

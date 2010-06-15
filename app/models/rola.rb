@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100615184953
+# Schema version: 20100615195417
 #
 # Table name: rolas
 #

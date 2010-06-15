@@ -1,12 +1,12 @@
 # == Schema Information
 # Schema version: 20100615195417
 #
-# Table name: ocenas
+# Table name: listas
 #
 #  id            :integer         not null, primary key
-#  serial_id     :integer
-#  uzytkownik_id :integer
-#  wartosc       :integer
+#  nazwa         :string(255)     not null
+#  dostep        :string(1)       default("p"), not null
+#  uzytkownik_id :integer         not null
 #  created_at    :datetime
 #  updated_at    :datetime
 #
@@ -14,11 +14,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  serial_id: 1
+  nazwa: MyString
+  dostep: MyString
   uzytkownik_id: 1
-  wartosc: 1
 
 two:
-  serial_id: 1
+  nazwa: MyString
+  dostep: MyString
   uzytkownik_id: 1
-  wartosc: 1

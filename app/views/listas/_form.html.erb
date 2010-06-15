@@ -1,0 +1,18 @@
+<% form_for(@lista) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nazwa %><br />
+    <%= f.text_field :nazwa %>
+  </p>
+
+  <p>
+    <%= f.label :dostep %><br />
+    <%= f.select(:dostep, options_for_select(@dostep_options, @lista.dostep)) %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :uzytkownik_id %>
+    <%= f.submit 'Zapisz' %>
+  </p>
+<% end %>
