@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100615171435
+# Schema version: 20100615184953
 #
 # Table name: odcineks
 #
@@ -11,6 +11,7 @@
 #  serial_id    :integer         not null
 #  created_at   :datetime
 #  updated_at   :datetime
+#  tytul        :string(255)
 #
 
 class Odcinek < ActiveRecord::Base
