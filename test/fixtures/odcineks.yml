@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20100615171435
+#
+# Table name: odcineks
+#
+#  id           :integer         not null, primary key
+#  numer        :integer         not null
+#  sezon        :integer         not null
+#  data_emisji  :datetime
+#  czas_trwania :integer
+#  serial_id    :integer         not null
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:

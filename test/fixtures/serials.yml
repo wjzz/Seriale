@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100615142437
+# Schema version: 20100615171435
 #
 # Table name: serials
 #

@@ -1,1 +1,23 @@
 <h3>Oglądasz odcinki serialu <b><%= @serial.nazwa %></b></h3>
+
+<table>
+  <tr>
+    <th>Sezon</th> 
+    <th>Odcinek</th> 
+    <th>Tytuł</th> 
+    <th>Czas trwania</th> 
+    <th>Data wyświetlania</th>
+  </tr>
+
+<% @serial.odcineks.sort {|a,b| a.sezon == b.sezon ? a.numer <=> b.numer : a.sezon <=> b.sezon }.each do |odcinek| %>
+
+  <tr>
+    <td><%= odcinek.sezon %></td>
+    <td><%= odcinek.numer %></td>
+    <td><%= odcinek.tytul %></td>
+    <td><%= odcinek.czas_trwania %> min.</td>
+    <td><%= odcinek.data_emisji %></td> 
+ </tr>
+
+<% end %>
+</table>
