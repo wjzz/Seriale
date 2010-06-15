@@ -35,14 +35,21 @@
 <% if is_signed_in? %>
 
 <hr />
-Oceń serial.
+  <% if @ocena.wartosc %>
+    <%= "Serial <b>#{@serial.nazwa}</b> został przez Ciebie oceniony na <b>#{@ocena.wartosc}</b>/10." %>
+  <% else %>
+    Nie oceniono jeszcze tego serialu.
+  <% end %>
 
   <% form_for(@ocena) do |f| %>
-     <p>
-       <%= f.label :wartosc, 'Wartość oceny' %>
-     </p>
+     <br />
+     <%= f.label :wartosc, 'Wartość oceny' %>
+     <%= f.select(:wartosc, options_for_select(@wartosc_options, @ocena.wartosc)) %>
 
-    <p><%= f.submit 'Zapisz' %></p>
+     <%= f.hidden_field :serial_id     %>
+     <%= f.hidden_field :uzytkownik_id %>
+
+     <%= f.submit 'Zapisz' %>
   <% end %>
 <% end %>
 

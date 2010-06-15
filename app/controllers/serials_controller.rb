@@ -12,7 +12,13 @@ class SerialsController < ApplicationController
   def show
     if is_signed_in?
       @user = current_user
-      @ocena = Ocena.new :uzytkownik_id => @user.id
+      @wartosc_options = (1..10).map { |n| [n.to_s, n] }
+
+      @ocena = Ocena.find(:first, :conditions => ["serial_id = :serial_id AND uzytkownik_id = :user_id",
+                          { :serial_id => @serial.id, :user_id => @user.id }] )
+
+      # Jesli dostalismy nil z find, to tworzymy nowa ocene
+      @ocena ||= Ocena.new :uzytkownik_id => @user.id, :serial_id => @serial.id
     end
   end
 
