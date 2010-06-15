@@ -4,10 +4,11 @@
     <%= link_to 'Załóż nowe konto', signup_path %>
   <% else %>
     <%= link_to 'Wyloguj się', signout_path %>
-
+    
     <hr />
 
     <%= link_to 'Twój profil', current_user %> <br /><br/>
+    <%= link_to 'Twoje oceny', :controller => 'ocenas', :action => 'index', :id => current_user.id %><br /><br />
     
     <% if current_user.admin? %>
       <div class="edition">

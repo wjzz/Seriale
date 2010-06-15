@@ -1,0 +1,15 @@
+<h3>Seriale ocenione przez użytkownika <%= @user.nazwa %></h3>
+
+<table>
+  <tr>
+    <th>Serial</th><th>Ocena</th>
+  </tr>
+<% @oceny.sort {|a,b| a.wartosc <=> b.wartosc }.each do |ocena| %>
+ <% serial = Serial.find(ocena.serial_id) %>
+  <tr>
+    <td><%= link_to (h serial.nazwa), serial %></td>
+    <td><%= ocena.wartosc %></td>
+    <td class="edition"><%= link_to 'Usuń', ocena, :confirm => 'Czy na pewno?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
