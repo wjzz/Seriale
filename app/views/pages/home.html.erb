@@ -1,5 +1,13 @@
 <h1>Strona główna serwisu <i>Seriale</i></h1>
 
+<% if current_user.nil? %>
+
 Nie czekaj dłużej, zarejestruj się już dziś!
 
 <h3><%= link_to 'Załóż konto', signup_path %></h3>
+
+<% else %>
+
+Witaj z powrotem, <b><%= current_user.nazwa %></b>!
+
+<% end %>

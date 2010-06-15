@@ -9,8 +9,8 @@
 
 <tr>
   <td><%= link_to lista.nazwa, lista %></td>
-  <td class="edition">Edytuj</td>
-  <td class="edition">Usuń</td>
+  <td class="edition"><%= link_to 'Edytuj', edit_lista_path(lista) %></td>
+  <td class="edition"><%= link_to 'Usuń', lista, :confirm => 'Czy na pewno?', :method => :delete %></td>
 </tr>
 
 <% end %>

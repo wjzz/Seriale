@@ -1,3 +1,9 @@
+<% if current_user.nil? || current_user.id != @lista.uzytkownik_id && @lista.dostep != 'o' %>
+
+<h2> Nie masz uprawnień do oglądania tej listy </h2>
+
+<% else %>
+
 <p>
   <b>Nazwa:</b>
   <%=h @lista.nazwa %>
@@ -5,14 +11,20 @@
 
 <p>
   <b>Dostep:</b>
-  <%=h @lista.dostep %>
+  <%= show_dostep(@lista) %>
 </p>
+
+
+<% if !current_user.nil? && current_user.id == @lista.uzytkownik_id %>
+  <%= link_to 'Edycja listy', edit_lista_path(@lista) %>
+<% else %>
+  Właściciel listy: <b><%= Uzytkownik.find(@lista.uzytkownik_id).nazwa %></b>
+<% end %>
+
+<hr />
 
 <p>
-  <b>Uzytkownik:</b>
-  <%=h @lista.uzytkownik_id %>
+  <b>Seriale należące do listy</b>
 </p>
 
-
-<%= link_to 'Edit', edit_lista_path(@lista) %> |
-<%= link_to 'Back', listas_path %>
+<% end %>

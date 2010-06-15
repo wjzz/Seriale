@@ -5,11 +5,11 @@ class ListasController < ApplicationController
   before_filter :find_lista,
     :only => [:show, :edit, :update, :destroy]
 
-  before_filter :find_users,
+  before_filter :find_user,
     :only => [:new, :show_for_user]
 
   def index
-    @listas = Lista.all
+    @public_listas = Lista.all.select { |l| l.dostep == "o" }
   end
 
   def show
@@ -29,7 +29,7 @@ class ListasController < ApplicationController
     @lista = Lista.new(params[:lista])
 
     if @lista.save
-        redirect_to(:action => :show_for_user, :id => @lista.uzytkownik_id, :notice => 'Lista dodana.')
+        redirect_to(:action => :show_for_user, :id => @lista.uzytkownik_id)
     else
       render :action => "new"
     end
@@ -37,7 +37,7 @@ class ListasController < ApplicationController
 
   def update
     if @lista.update_attributes(params[:lista])
-      redirect_to(@lista, :notice => 'Lista zaktualizowana.')
+      redirect_to(@lista)
     else
       render :action => "edit"
     end
@@ -46,7 +46,7 @@ class ListasController < ApplicationController
   def destroy
     @lista.destroy
 
-    redirect_to(listas_url)
+    redirect_to :action => :show_for_user, :id => @lista.uzytkownik_id
   end
 
   private
@@ -58,7 +58,7 @@ class ListasController < ApplicationController
     @lista = Lista.find(params[:id])
   end
 
-  def find_users
+  def find_user
     @user = Uzytkownik.find(params[:id])
   end
 end
