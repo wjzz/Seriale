@@ -32,6 +32,20 @@
 <% end %>
 </ul>
 
+<% if is_signed_in? %>
+
+<hr />
+Oceń serial.
+
+  <% form_for(@ocena) do |f| %>
+     <p>
+       <%= f.label :wartosc, 'Wartość oceny' %>
+     </p>
+
+    <p><%= f.submit 'Zapisz' %></p>
+  <% end %>
+<% end %>
+
 <% if can_edit? :serials %>
 <div class="edition">
 <hr />

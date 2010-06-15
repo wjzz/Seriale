@@ -14,4 +14,6 @@
 class Ocena < ActiveRecord::Base
   belongs_to :uzytkownik
   belongs_to :serial
+
+  validates_presence_of :wartosc, :serial_id, :uzytkownik_id
 end

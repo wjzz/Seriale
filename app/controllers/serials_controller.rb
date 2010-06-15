@@ -1,4 +1,5 @@
 class SerialsController < ApplicationController
+
   before_filter :find_serial,
     :only => [:show, :edit, :update, :destroy]
 
@@ -9,6 +10,10 @@ class SerialsController < ApplicationController
   end
 
   def show
+    if is_signed_in?
+      @user = current_user
+      @ocena = Ocena.new :uzytkownik_id => @user.id
+    end
   end
 
   def manage

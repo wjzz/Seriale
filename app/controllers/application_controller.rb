@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # moze byc potrzebne
+  include ApplicationHelper
   include LoginsHelper
 
   # Scrub sensitive parameters from your log
