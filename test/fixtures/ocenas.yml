@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20100615142437
+#
+# Table name: ocenas
+#
+#  id            :integer         not null, primary key
+#  serial_id     :integer
+#  uzytkownik_id :integer
+#  wartosc       :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
