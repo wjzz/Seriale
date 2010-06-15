@@ -1,0 +1,13 @@
+<h3>Edycja odcinków serialu <b><%= @serial.nazwa %></b></h3>
+
+<table>
+  <tr><th>Sezon</th><th>Odcinek</th><th>Tytuł</th></tr>
+
+<% @serial.odcineks.sort {|a,b| a.sezon == b.sezon ? a.numer <=> b.numer : a.sezon <=> b.sezon }.each do |odcinek| %>
+
+  <tr><td><%= odcinek.sezon %></td><td><%= odcinek.numer %></td></tr>
+
+<% end %>
+</table>
+
+<%= link_to 'Dodaj nowy odcinek', :action => :new, :id => @serial.id %>

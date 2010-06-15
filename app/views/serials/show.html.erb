@@ -15,6 +15,14 @@
   <%=h @serial.opis %>
 </p>
 
+<p>
+  <b>Liczba odcinków:</b> 0
+</p>
+
+<p>
+  <%= link_to 'Spis odcinków', :controller => :odcineks, :action => :show_for_serial, :id => @serial.id %>
+</p>
+
 <h3>Aktorzy występujący w serialu</h3>
 
 <ul>
@@ -57,6 +65,7 @@
 <div class="edition">
 <hr />
 <%= link_to 'Edytuj serial', edit_serial_path(@serial) %><br /><br />
+<%= link_to 'Edytuj odcinki', :controller => :odcineks, :action => :edit_for_serial, :id => @serial.id %><br /><br /> 
 <%= link_to "Dodaj aktora do <b>#{@serial.nazwa}</b>", 
             :controller => :rolas, :action => :new_with_serial, :id => @serial.id %>
 </div>

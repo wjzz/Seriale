@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100615142437) do
+ActiveRecord::Schema.define(:version => 20100615171435) do
 
   create_table "aktors", :force => true do |t|
     t.string   "imie"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(:version => 20100615142437) do
     t.integer  "serial_id"
     t.integer  "uzytkownik_id"
     t.integer  "wartosc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "odcineks", :force => true do |t|
+    t.integer  "numer",        :null => false
+    t.integer  "sezon",        :null => false
+    t.datetime "data_emisji"
+    t.integer  "czas_trwania"
+    t.integer  "serial_id",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

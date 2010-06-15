@@ -22,4 +22,6 @@ class Serial < ActiveRecord::Base
 
   has_many :ocenas
   has_many :uzytkowniks, :through => :ocenas
+
+  has_many :odcineks
 end

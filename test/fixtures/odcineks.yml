@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  numer: 1
+  sezon: 1
+  data_emisji: 
+  czas_trwania: 1
+  serial_id: 1
+
+two:
+  numer: 1
+  sezon: 1
+  data_emisji: 
+  czas_trwania: 1
+  serial_id: 1

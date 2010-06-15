@@ -1,0 +1,28 @@
+<% form_for(@odcinek) do |f| %>
+   
+  <p>
+    <%= f.label :numer, 'Numer odcinka' %><br />
+    <%= f.select(:numer, options_for_select(@numer_options, @odcinek.numer)) %>
+  </p> 
+
+  <p>
+    <%= f.label :sezon %><br />
+    <%= f.select(:sezon, options_for_select(@sezon_options, @odcinek.sezon)) %>
+  </p>
+
+  <p>
+    <%= f.label :data_emisji %><br />
+    
+  </p>
+
+  <p>
+    <%= f.label :czas_trwania, 'Czas trwania (w minutach)' %><br />
+    <%= f.select(:czas_trwania, options_for_select(@czas_options, @odcinek.czas_trwania)) %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :serial_id %>
+    <%= f.submit 'Zapisz' %>
+  </p>
+
+<% end %>
