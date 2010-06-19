@@ -6,6 +6,10 @@ Nie czekaj dłużej, zarejestruj się już dziś!
 
 <h3><%= link_to 'Załóż konto', signup_path %></h3>
 
+lub (jeśli posiadasz już konto)
+
+<h3><%= link_to 'Zaloguj się', signin_path %></h3>
+
 <% else %>
 
 Witaj z powrotem, <b><%= current_user.nazwa %></b>!

@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <b>Liczba odcinków:</b> 0
+  <b>Liczba odcinków:</b> <%= @serial.odcineks.size %>
 </p>
 
 <p>
@@ -59,6 +59,31 @@
 
      <%= f.submit 'Zapisz' %>
   <% end %>
+
+
+<hr />
+  <h3>Występuje w listach</h3>
+
+  <ul>
+  <% @serial.assocs.each do |assoc| %>
+    <li>
+      <% lista = Lista.find(assoc.lista_id) %>
+      <%= link_to lista.nazwa, lista %> 
+      <span class="edition">
+        <%= link_to '[Usuń z listy]', assoc, :confirm => "Czy na pewno?", :method => :delete %>
+      </span>
+    </li>    
+  <% end %>
+  </ul>
+
+  <h3>Dodaj do listy: </h3>
+  <% form_for(@assoc) do |f| %>
+    <br />
+    <%= f.hidden_field :serial_id %>
+    <%= f.select :lista_id, options_for_select(@lista_options) %>
+    <%= f.submit 'Dodaj do listy' %>
+  <% end %>
+
 <% end %>
 
 <% if can_edit? :serials %>

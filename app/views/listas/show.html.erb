@@ -25,6 +25,12 @@
 
 <p>
   <b>Seriale należące do listy</b>
+
+  <ul>
+  <% @lista.serials.each do |serial| %>
+    <li><%= link_to serial.nazwa, serial %></li>
+  <% end %>
+  </ul>
 </p>
 
 <% end %>

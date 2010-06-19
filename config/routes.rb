@@ -19,6 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :ocenas,   :only => [:create, :update, :destroy]
   map.resources :odcineks, :only => [:show, :create, :edit, :update, :destroy]
   map.resources :listas,   :only => [:index, :show, :create, :edit, :update, :destroy]
+  map.resources :assocs,   :only => [:create, :destroy]
 
   map.root :controller => 'pages', :action => 'home'
 

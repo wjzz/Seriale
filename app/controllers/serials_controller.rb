@@ -19,6 +19,10 @@ class SerialsController < ApplicationController
 
       # Jesli dostalismy nil z find, to tworzymy nowa ocene
       @ocena ||= Ocena.new :uzytkownik_id => @user.id, :serial_id => @serial.id
+
+      @assoc  = Assoc.new :serial_id => @serial.id
+      @listas = @user.listas
+      @lista_options = @listas.map { |l| [l.nazwa, l.id] }
     end
   end
 

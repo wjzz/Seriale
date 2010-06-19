@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100615195417
+# Schema version: 20100618080446
 #
 # Table name: serials
 #
@@ -24,4 +24,7 @@ class Serial < ActiveRecord::Base
   has_many :uzytkowniks, :through => :ocenas
 
   has_many :odcineks
+
+  has_many :assocs
+  has_many :listas, :through => :assocs
 end

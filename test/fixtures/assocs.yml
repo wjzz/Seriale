@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20100618080446
+#
+# Table name: assocs
+#
+#  id         :integer         not null, primary key
+#  lista_id   :integer         not null
+#  serial_id  :integer         not null
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lista_id: 1
+  serial_id: 1
+
+two:
+  lista_id: 1
+  serial_id: 1

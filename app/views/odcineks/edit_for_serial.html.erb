@@ -27,4 +27,7 @@
 </table>
 
 <hr />
-<span class="edition"><%= link_to 'Dodaj nowy odcinek', :action => :new, :id => @serial.id %></span>
+<div class="edition">
+  <%= link_to 'Dodaj nowy odcinek', :action => :new, :id => @serial.id %><br />
+  <%= link_to 'Dodaj odcinki zbiorowo', :action => :new_batch, :id => @serial.id %>
+</div>

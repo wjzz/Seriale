@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100615195417
+# Schema version: 20100618080446
 #
 # Table name: listas
 #
@@ -13,6 +13,9 @@
 
 class Lista < ActiveRecord::Base
   belongs_to :uzytkownik
+
+  has_many :assocs
+  has_many :serials, :through => :assocs
 
   validates_presence_of :nazwa
   validates_length_of :dostep, :maximum => 1

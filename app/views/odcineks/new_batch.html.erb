@@ -1,0 +1,38 @@
+<% form_for @odcinek, :url => { :action => :create_batch } do |f| %>
+
+<%= hidden_field_tag 'serial_id', @serial_id %>
+
+<p>
+  Sezon: <br />
+  <%= select_tag 'sezon', options_for_select(@sezon_options) %>
+</p>
+
+<p>
+  Zakres odcinków: <br />
+  Od <%= select_tag 'pierwszy', options_for_select(@numer_options) %>
+  do <%= select_tag 'ostatni', options_for_select(@numer_options) %>
+<p>
+  
+<p>
+  <%= f.label :data_emisji, 'Data emisji pierwszego odcinka z zakresu' %><br />
+  <%= f.datetime_select :data_emisji, :start_year => 1900, :use_month_numbers => true %>
+</p>
+
+<p>
+  <%= f.label :czas_trwania, 'Czas trwania (w minutach)' %><br />
+  <%= f.select(:czas_trwania, options_for_select(@czas_options)) %>
+</p>  
+
+<p>
+  Liczba dni między kolejnymi odcinkami:
+  <%= select_tag 'odstep', options_for_select(@odstep_options) %>
+</p>
+
+<p>
+  Tytuły kolejnych odcinków (każdy w osobnym wierszu): <br />
+  <%= text_area_tag 'tytuly', nil, :rows => 20, :cols => 70 %>
+</p>
+
+<%= submit_tag 'Dodaj odcinki' %>
+
+<% end %>
