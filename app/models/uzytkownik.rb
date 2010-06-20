@@ -26,8 +26,8 @@ class Uzytkownik < ActiveRecord::Base
 
   validates_confirmation_of :password
 
-  validates_presence_of :password
-  validates_length_of   :password, :within => 6..40
+  #validates_presence_of :password
+  #validates_length_of   :password, :within => 6..40
 
   before_save :encrypt_password
 

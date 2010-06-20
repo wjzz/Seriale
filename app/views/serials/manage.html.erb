@@ -11,7 +11,7 @@
 <% @serials.each do |serial| %>
   <tr>
     <td><%= link_to (h serial.nazwa), serial %></td>
-    <td><%=h serial.opis %></td>
+    <td><%=h serial.opis[0..20] %>...</td>
     <td><%=h serial.kategoria %></td>
     <td><%=h serial.kanaltv %></td>
 
