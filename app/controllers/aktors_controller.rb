@@ -44,6 +44,10 @@ class AktorsController < ApplicationController
   end
 
   def destroy
+    @aktor.rolas.each do |rola|
+      rola.destroy
+    end
+
     @aktor.destroy
 
     redirect_to(aktors_url)

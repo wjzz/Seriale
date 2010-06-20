@@ -49,6 +49,14 @@ class UzytkowniksController < ApplicationController
   end
 
   def destroy
+    @user.listas.each do |lista|
+      lista.destroy
+    end
+
+    @user.ocenas.each do |ocena|
+      ocena.destroy
+    end
+
     @user.destroy
 
     redirect_to(uzytkowniks_url)

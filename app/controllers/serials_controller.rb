@@ -55,6 +55,22 @@ class SerialsController < ApplicationController
   end
 
   def destroy
+    @serial.rolas.each do |rola|
+      rola.destroy
+    end
+
+    @serial.ocenas.each do |ocena|
+      ocena.destroy
+    end
+
+    @serial.odcineks.each do |odcinek|
+      odcinek.destroy
+    end
+
+    @serial.assocs.each do |assoc|
+      assoc.destroy
+    end
+
     @serial.destroy
 
     redirect_to(serials_url)

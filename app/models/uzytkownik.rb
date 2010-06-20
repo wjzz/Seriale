@@ -15,7 +15,6 @@
 require 'digest'
 class Uzytkownik < ActiveRecord::Base
   attr_accessor :password
-#  attr_accessible :nazwa, :email, :rola, :password, :password_confirmation
 
   validates_presence_of :nazwa, :email
 
@@ -27,8 +26,8 @@ class Uzytkownik < ActiveRecord::Base
 
   validates_confirmation_of :password
 
-  #validates_presence_of :password
-  #validates_length_of   :password, :within => 6..40
+  validates_presence_of :password
+  validates_length_of   :password, :within => 6..40
 
   before_save :encrypt_password
 

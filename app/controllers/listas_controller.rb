@@ -44,6 +44,10 @@ class ListasController < ApplicationController
   end
 
   def destroy
+    @lista.assocs.each do |assoc|
+      assoc.destroy
+    end
+
     @lista.destroy
 
     redirect_to :action => :show_for_user, :id => @lista.uzytkownik_id
